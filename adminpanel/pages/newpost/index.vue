@@ -4,7 +4,7 @@
 <script>
 import PostForm from '@/components/PostForm.vue'
 export default {
-  name: 'Index',
+  name: 'NewPostPage',
   components: {
     PostForm
   }

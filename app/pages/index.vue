@@ -9,6 +9,7 @@
 import PostTile from '~/components/PostTile.vue'
 
 export default {
+  name: 'HomePage',
   components: {
     PostTile
   },

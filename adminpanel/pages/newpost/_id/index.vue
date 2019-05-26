@@ -9,6 +9,7 @@
 import PostForm from '~/components/PostForm.vue'
 
 export default {
+  name: 'EditPostPage',
   components: {
     PostForm
   },
