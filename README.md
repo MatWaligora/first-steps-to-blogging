@@ -8,9 +8,9 @@ You will lose data if you restart the page.
 
 Open three terminal instances
 
-1. cd server && npm start
-2. cd adminpanel && npm run dev
-2. cd app && npm run dev
+1. cd server && npm install && npm start
+2. cd adminpanel && npm install && npm run dev
+2. cd app && npm install && npm run dev
 
 Application ports:
 
