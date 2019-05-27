@@ -1,7 +1,7 @@
 <template>
-  <h1 class="post">
+  <li class="list-group-item">
     <nuxt-link tag="a" :to="`/newpost/${post.id}`">{{ post.title }}</nuxt-link>
-  </h1>
+  </li>
 </template>
 
 <script>

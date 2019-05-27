@@ -1,9 +1,9 @@
 <template>
   <section class="container">
     <p v-if="errorMessage">{{ errorMessage }}</p>
-    <ul v-else class="list-group">
+    <div v-else class="card-deck">
       <post-tile v-for="post in posts" :key="post.id" :post="post" />
-    </ul>
+    </div>
   </section>
 </template>
 
@@ -11,7 +11,7 @@
 import PostTile from '~/components/PostTile.vue'
 
 export default {
-  name: 'Posts',
+  name: 'HomePage',
   components: {
     PostTile
   },

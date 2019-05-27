@@ -1,11 +1,18 @@
 <template>
   <div>
-    <nuxt-link tag="a" to="/">Home</nuxt-link>
-    <nuxt-link tag="a" to="/posts">Posts</nuxt-link>
-    <nuxt-link tag="a" to="/newpost">New Post</nuxt-link>
+    <Navigation />
     <nuxt />
   </div>
 </template>
+
+<script>
+import Navigation from '~/components/Navigation'
+export default {
+  components: {
+    Navigation
+  }
+}
+</script>
 
 <style>
 html {

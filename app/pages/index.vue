@@ -1,34 +1,12 @@
 <template>
   <section class="container">
-    <p v-if="errorMessage">{{ errorMessage }}</p>
-    <post-tile v-for="post in posts" v-else :key="post.id" :post="post" />
+    Welcome to our cool demo blog
   </section>
 </template>
 
 <script>
-import PostTile from '~/components/PostTile.vue'
-
 export default {
-  name: 'HomePage',
-  components: {
-    PostTile
-  },
-  asyncData({ $axios }) {
-    return $axios
-      .get('http://localhost:9000/posts')
-      .then(res => {
-        return {
-          posts: res.data,
-          errorMessage: null
-        }
-      })
-      .catch(e => {
-        return {
-          posts: [],
-          errorMessage: e
-        }
-      })
-  }
+  name: 'HomePage'
 }
 </script>
 

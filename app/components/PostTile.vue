@@ -1,7 +1,13 @@
 <template>
-  <h1 class="post">
-    <nuxt-link tag="a" :to="`/${post.id}`">{{ post.title }}</nuxt-link>
-  </h1>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ post.title }}</h5>
+      <p class="card-text">{{ description }}</p>
+    </div>
+    <div class="card-footer">
+      <nuxt-link tag="a" :to="`/posts/${post.id}`">Read all</nuxt-link>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -11,6 +17,11 @@ export default {
     post: {
       type: Object,
       default: () => {}
+    }
+  },
+  computed: {
+    description() {
+      return this.post.body.substr(0, 15)
     }
   }
 }

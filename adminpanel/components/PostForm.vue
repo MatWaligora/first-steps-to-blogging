@@ -30,7 +30,12 @@
             {{ editMode ? 'Save post' : 'Add post' }}
           </button>
         </form>
-        <p v-if="error">{{ error }}</p>
+        <div class="mt-4">
+          <p v-if="error" class="text-danger">{{ error }}</p>
+          <p v-if="success" class="text-success">
+            Cool, you added a post !
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -51,6 +56,7 @@ export default {
         title: '',
         body: ''
       },
+      success: false,
       editMode: false,
       error: null
     }
@@ -69,6 +75,7 @@ export default {
       try {
         await this.$axios.post('http://localhost:9000/posts', this.post)
         this.error = null
+        this.success = true
       } catch {
         this.error = 'Could not add your post'
       }
@@ -80,6 +87,7 @@ export default {
           this.post
         )
         this.error = null
+        this.success = false
       } catch {
         this.error = 'Could not update your post'
       }
