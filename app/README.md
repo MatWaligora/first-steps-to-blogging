@@ -1,4 +1,4 @@
-# presentation-demo
+# App demo (BLOG)
 
 > Demo for First steps to blogging with nuxt.js 
 
