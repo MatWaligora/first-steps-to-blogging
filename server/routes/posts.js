@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   var post = req.body;
   if(post) {
-    post.id = Math.ceil(Math.random() * 10 + 10000);
+    post.id = Math.ceil(Math.random() * 10 + 100000);
     mock.push(post);
     return res.send({status: 200, message: 'Successfully added your post'});
   }
@@ -39,14 +39,11 @@ router.post('/', function(req, res, next) {
 router.put('/:id', function(req, res, next) {
   var id = req.params.id.toString();
   var postInMockIndex = mock.findIndex(post => post.id.toString() === id);
-  console.log('postInMockIndex', postInMockIndex);
   if(postInMockIndex === -1 ) {
     return res.send({status: 500, message: 'Something went terribly wrong'});
   }
 
   var post = req.body;
-  console.log('post', post);
-
   if(post) {
     mock[postInMockIndex] = post;
     return res.send({status: 200, message: 'Successfully added your post'});
