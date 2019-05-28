@@ -32,8 +32,8 @@
         </form>
         <div class="mt-4">
           <p v-if="error" class="text-danger">{{ error }}</p>
-          <p v-if="success" class="text-success">
-            Cool, you added a post !
+          <p v-else-if="success" class="text-success">
+            Cool, you {{ editMode ? 'updated' : 'added' }} a post !
           </p>
         </div>
       </div>
@@ -78,6 +78,7 @@ export default {
         this.success = true
       } catch {
         this.error = 'Could not add your post'
+        this.success = false
       }
     },
     async updatePost() {
@@ -87,9 +88,10 @@ export default {
           this.post
         )
         this.error = null
-        this.success = false
+        this.success = true
       } catch {
         this.error = 'Could not update your post'
+        this.success = false
       }
     }
   }
